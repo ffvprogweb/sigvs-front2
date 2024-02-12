@@ -38,12 +38,22 @@ const ConsultaCatalogo = () => {
         console.error(error);
       });
   }
+  function uploadImagem() {
+    navigator("/upload");
+  }
 
   return (
     <div className="container">
       <h5 className="text-center">Consulta Catalogo </h5>
       <button className="btn btn-primary mb-2" onClick={cadastrarProduto}>
         Cadastrar Produto
+      </button>
+      <button
+        className="btn btn-primary mb-2"
+        onClick={uploadImagem}
+        style={{ marginLeft: "10px" }}
+      >
+        Upload de Imagem
       </button>
       <table className="table table-striped table-bordered">
         <thead>

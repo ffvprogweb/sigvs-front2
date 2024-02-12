@@ -1,6 +1,7 @@
 import ConsultaCatalogo from "./componentes/ConsultaCatalogo";
 import Header from "./componentes/Header";
 import Footer from "./componentes/Footer";
+import UploadImagem from "./componentes/UploadImagem";
 import CadastrarProduto from "./componentes/CadastrarProduto";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -22,6 +23,7 @@ function App() {
             path="/edit-produto/:id"
             element={<CadastrarProduto />}
           ></Route>
+          <Route path="/upload" element={<UploadImagem />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
