@@ -14,6 +14,7 @@ const ConsultaCatalogo = () => {
     listaDeProdutos()
       .then((response) => {
         setProdutos(response.data);
+        console.log(`retorno da api de consulta=> `, response.data);
       })
       .catch((error) => {
         console.error(error);

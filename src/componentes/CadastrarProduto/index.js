@@ -61,7 +61,7 @@ const CadastrarProduto = () => {
       if (id) {
         updateProduto(id, produto)
           .then((response) => {
-            console.log(response.data);
+            console.log("produto atualizado", response.data);
             navigator("/produtos");
           })
           .catch((error) => {
@@ -70,7 +70,7 @@ const CadastrarProduto = () => {
       } else {
         cadastroDeProduto(produto)
           .then((response) => {
-            console.log(response.data);
+            console.log("retorno da api produto cadastrado=>", response.data);
             navigator("/produtos");
           })
           .catch((error) => {
@@ -95,13 +95,13 @@ const CadastrarProduto = () => {
       msgErro.categoria = "A categoria do produto é obrigatorio. ";
       valid = false;
     }
-    if (quantidadeNoEstoque.trim()) {
+    if (quantidadeNoEstoque > 0) {
       msgErro.quantidadeNoEstoque = "";
     } else {
       msgErro.quantidadeNoEstoque = "A quantidade deve ser maior que zero. ";
       valid = false;
     }
-    if (custo.trim()) {
+    if (custo > 0) {
       msgErro.custo = "";
     } else {
       msgErro.custo = "O custo deve ser maior que zero. ";
