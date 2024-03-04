@@ -4,6 +4,7 @@ import Footer from "./componentes/Footer";
 import UploadImagem from "./componentes/UploadImagem";
 import CadastrarProduto from "./componentes/CadastrarProduto";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <div>

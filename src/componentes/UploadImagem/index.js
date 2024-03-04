@@ -22,11 +22,15 @@ const ImageUpload = () => {
       formData.append("id", id);
 
       axios
-        .post("http://localhost:8080/api/v1/produtos/imadb", formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
+        .post(
+          "https://produto-backend2-0bd4ca5d2150.herokuapp.com/api/v1/produtos/imadb",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
         .then((response) => {
           console.log("Resposta da API:", response.data);
           // Lidar com a resposta da API após o upload do arquivo
