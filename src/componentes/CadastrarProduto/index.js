@@ -65,7 +65,7 @@ const CadastrarProduto = () => {
             navigator("/produtos");
           })
           .catch((error) => {
-            console.error(error);
+            console.error("erro no update", error);
           });
       } else {
         cadastroDeProduto(produto)

@@ -5,7 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const ImageUpload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [id, setId] = useState("");
-
+  /*const url = "http://localhost:8080/api/v1/produtos/imadb";*/
+  const url =
+    "https://produto-backend2-0bd4ca5d2150.herokuapp.com/api/v1/produtos/imadb";
   const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
   };
@@ -22,15 +24,11 @@ const ImageUpload = () => {
       formData.append("id", id);
 
       axios
-        .post(
-          "https://produto-backend2-0bd4ca5d2150.herokuapp.com/api/v1/produtos/imadb",
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        )
+        .post(url, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
         .then((response) => {
           console.log("Resposta da API:", response.data);
           // Lidar com a resposta da API após o upload do arquivo
